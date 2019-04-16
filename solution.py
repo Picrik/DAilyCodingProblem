@@ -38,6 +38,7 @@ def multiplicationArrayWODIV(Arr):
 # Given an array of integers, find the first missing positive integer in linear time and constant space. 
 #In other words, find the lowest positive integer that does not exist in the array. 
 #The array can contain duplicates and negative numbers as well.
+
 def findFirstMissing(liste):
     liste.sort()
     anVal = liste[0]
@@ -51,3 +52,23 @@ def findFirstMissing(liste):
             else:
                 return 0
             break
+
+#4
+#Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
+#For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
+#You can assume that the messages are decodable. For example, '001' is not allowed.
+
+def numberWaysDecode(message):
+    message = str(message)
+    liste3 = []
+    for i in range(len(str(message))):
+        if int(message[i]) > 0:
+            liste3.append(message[i])
+            val = 0
+            if i == 0:
+                continue
+            else:
+                val = message[i-1] + message[i]
+                if int(val) < 27 and int(val) > 0 and int(message[i-1]) > 0:
+                    liste3.append(val)
+    return liste3
