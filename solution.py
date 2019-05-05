@@ -58,17 +58,24 @@ def findFirstMissing(liste):
 #For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
 #You can assume that the messages are decodable. For example, '001' is not allowed.
 
-def numberWaysDecode(message):
-    message = str(message)
-    liste3 = []
-    for i in range(len(str(message))):
-        if int(message[i]) > 0:
-            liste3.append(message[i])
-            val = 0
-            if i == 0:
-                continue
-            else:
-                val = message[i-1] + message[i]
-                if int(val) < 27 and int(val) > 0 and int(message[i-1]) > 0:
-                    liste3.append(val)
-    return liste3
+def countTest(msg):
+    if not msg:
+        return 1
+    elif int(msg[:2]) > 9 and int(msg[:2]) < 27:
+        return countTest(msg[1:]) + countTest(msg[2:])
+    else:
+        return countTest(msg[1:])
+    
+#5
+#Given a list of integers, write a function that returns the largest sum of non-adjacent numbers.
+#Numbers can be 0 or negative.
+#For example, [2, 4, 6, 2, 5] should return 13, since we pick 2, 6, and 5. [5, 1, 1, 5]
+#should return 10, since we pick 5 and 5.
+
+def sumNonAdj(liste):
+    val = min(liste)
+    for i in range(len(liste)):
+        for j in range(i+2,len(liste)):
+            if val < (liste[i] + liste[j]):
+                val = liste[i] + liste[j]
+    return val
