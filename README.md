@@ -32,3 +32,8 @@ Given a list of integers, write a function that returns the largest sum of non-a
 Numbers can be 0 or negative.
 For example, [2, 4, 6, 2, 5] should return 13, since we pick 2, 6, and 5. [5, 1, 1, 5]
 should return 10, since we pick 5 and 5.
+
+#6
+Given a singly linked list and an integer k, remove the kth last element from the list. k is guaranteed to be smaller than the length of the list.
+The list is very long, so making more than one pass is prohibitively expensive.
+Do this in constant space and in one pass.
