@@ -11,7 +11,7 @@ def findingKSum(liste, k):
                 return True
 
 #2
-#Given an array of integers, return a new array such that each element at index i of the new 
+#Given an array of integers, return a new array such that each element at index i of the new
 #array is the product of all the numbers in the original array except the one at i.
 
 def multiplicationArrayWDIV(Arr):
@@ -33,10 +33,10 @@ def multiplicationArrayWODIV(Arr):
             val *= num
         newArray.append(val)
     return newArray
-    
+
 #3
-# Given an array of integers, find the first missing positive integer in linear time and constant space. 
-#In other words, find the lowest positive integer that does not exist in the array. 
+# Given an array of integers, find the first missing positive integer in linear time and constant space.
+#In other words, find the lowest positive integer that does not exist in the array.
 #The array can contain duplicates and negative numbers as well.
 
 def findFirstMissing(liste):
@@ -54,19 +54,6 @@ def findFirstMissing(liste):
             break
 
 #4
-#Given the mapping a = 1, b = 2, ... z = 26, and an encoded message, count the number of ways it can be decoded.
-#For example, the message '111' would give 3, since it could be decoded as 'aaa', 'ka', and 'ak'.
-#You can assume that the messages are decodable. For example, '001' is not allowed.
-
-def countTest(msg):
-    if not msg:
-        return 1
-    elif int(msg[:2]) > 9 and int(msg[:2]) < 27:
-        return countTest(msg[1:]) + countTest(msg[2:])
-    else:
-        return countTest(msg[1:])
-    
-#5
 #Given a list of integers, write a function that returns the largest sum of non-adjacent numbers.
 #Numbers can be 0 or negative.
 #For example, [2, 4, 6, 2, 5] should return 13, since we pick 2, 6, and 5. [5, 1, 1, 5]
@@ -80,7 +67,7 @@ def sumNonAdj(liste):
                 val = liste[i] + liste[j]
     return val
 
-#6
+#5
 #Given a singly linked list and an integer k, remove the kth last element from the list.
 #k is guaranteed to be smaller than the length of the list.
 #The list is very long, so making more than one pass is prohibitively expensive.
